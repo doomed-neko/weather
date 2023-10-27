@@ -129,7 +129,18 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.''',
             ),
 
             // animation
-            Lottie.asset(getWeatherAnimation(_weather?.mainCondition)),
+            Column(
+              children: [
+                Lottie.asset(getWeatherAnimation(_weather?.mainCondition)),
+                Text(
+                  _weather?.mainCondition ?? "",
+                  style: const TextStyle(
+                    fontSize: 40,
+                    fontFamily: "Bebas",
+                  ),
+                )
+              ],
+            ),
 
             Padding(
               padding: const EdgeInsets.only(bottom: 70),
@@ -139,7 +150,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.''',
                   Text(
                     "${_weather?.temperture}°C",
                     style: const TextStyle(
-                      fontSize: 40,
+                      fontSize: 50,
                       fontFamily: "Bebas",
                     ),
                   ),
